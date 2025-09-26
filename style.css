@@ -24,12 +24,14 @@ body {
 header {
     position: relative;
     height: 70vh;
-    background: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1506748686212-2c0f5d3f1c4d?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGNvbGxlZSUyMGNhbXB1cHxlbnwwfHx8fDE2NjI4NzA5NzI&ixlib=rb-1.2.1&q=80&w=1080') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
     text-align: center;
+}
+
 }
 
 header .overlay {
