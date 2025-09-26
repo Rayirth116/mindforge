@@ -24,7 +24,7 @@ body {
 header {
     position: relative;
     height: 70vh;
-    background-image: url('banner.png'); /* Local banner image */
+    background-image: url('banner.jpg'); /* Local banner image */
     background-size: cover;
     background-position: center;
     display: flex;
