@@ -24,14 +24,14 @@ body {
 header {
     position: relative;
     height: 70vh;
-    background: url('https://images.unsplash.com/photo-1506748686212-2c0f5d3f1c4d?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGNvbGxlZSUyMGNhbXB1cHxlbnwwfHx8fDE2NjI4NzA5NzI&ixlib=rb-1.2.1&q=80&w=1080') center/cover no-repeat;
+    background-image: url('banner.png'); /* Local banner image */
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
     text-align: center;
-}
-
+    color: #fff;
 }
 
 header .overlay {
@@ -40,12 +40,13 @@ header .overlay {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(24, 40, 72, 0.5); /* pale overlay */
+    background-color: rgba(24, 40, 72, 0.5); /* pale overlay for text readability */
+    z-index: 1;
 }
 
 header .header-content {
     position: relative;
-    z-index: 1;
+    z-index: 2; /* ensures text is above overlay */
 }
 
 header h1 {
