@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mind Forge</title>
+    <meta name="description" content="Mind Forge - Unlock your potential with Math, Physics, and Computer Science courses">
+    <meta name="keywords" content="education, math, physics, computer science, learning">
+    <meta name="author" content="Mind Forge">
+    <title>Mind Forge - Transform Your Mind</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="animate-float">
     <div class="overlay"></div>
-    <div class="container header-content">
+    <div class="container header-content animate-fade-in-down animate-delay-1">
         <h1>Mind Forge</h1>
-        <p>Unlock your potential with Math, Physics, and Computer courses!</p>
+        <p>Unlock your potential with Math, Physics, and Computer Science courses!</p>
     </div>
 </header>
 
     <section class="courses">
         <div class="container">
-            <h2>Our Courses</h2>
+            <h2 class="animate-reveal">Our Courses</h2>
             <div class="course-cards">
-                <div class="card">
+                <div class="card animate-float animate-float-delay-1 animate-reveal" data-animate-delay="200">
                     <h3>Mathematics</h3>
                     <p>Challenge your problem-solving skills with advanced math concepts.</p>
                 </div>
-                <div class="card">
+                <div class="card animate-float animate-float-delay-2 animate-reveal" data-animate-delay="400">
                     <h3>Physics</h3>
                     <p>Explore the laws of the universe with hands-on and theoretical learning.</p>
                 </div>
-                <div class="card">
+                <div class="card animate-float animate-float-delay-3 animate-reveal" data-animate-delay="600">
                     <h3>Computer Science</h3>
                     <p>Learn coding, algorithms, and modern tech to shape your future.</p>
                 </div>
@@ -39,17 +42,71 @@
 
     <section class="about">
         <div class="container">
-            <h2>Why Mind Forge?</h2>
-            <p>We bring together high school and college students from around the world to learn, grow, and innovate. Our courses are designed for curious minds ready to challenge themselves and build a strong foundation for the future.</p>
+            <h2 class="animate-reveal">Why Mind Forge?</h2>
+            <p class="animate-reveal">We bring together high school and college students from around the world to learn, grow, and innovate. Our courses are designed for curious minds ready to challenge themselves and build a strong foundation for the future.</p>
         </div>
     </section>
 
-    <footer>
+    <footer class="animate-reveal">
         <div class="container">
-            <p>Contact us: <a href="mailto:help@mindforge.publicvm.com">help@mindforge.publicvm.com</a></p>
+            <p>Contact us: <a href="mailto:help@mindforge.publicvm.com" tabindex="0">help@mindforge.publicvm.com</a></p>
             <p>&copy; 2025 Mind Forge</p>
             <p>Site valid till: 26/9/26</p>
         </div>
     </footer>
+
+    <!-- Scroll Reveal Animation Script -->
+    <script>
+        // Intersection Observer for scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const delay = element.dataset.animateDelay || 0;
+
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, delay);
+
+                    observer.unobserve(element);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-reveal class
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.animate-reveal');
+            revealElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Enhanced focus management for accessibility
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add enhanced focus styles for keyboard navigation
+            const style = document.createElement('style');
+            style.textContent = `
+                *:focus {
+                    outline: 2px solid var(--accent-yellow);
+                    outline-offset: 2px;
+                }
+
+                *:focus:not(:focus-visible) {
+                    outline: none;
+                }
+
+                *:focus-visible {
+                    outline: 2px solid var(--accent-yellow);
+                    outline-offset: 2px;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
 </body>
 </html>
