@@ -1,3 +1,46 @@
+/* CSS Custom Properties - Blue-Violet Design System */
+:root {
+    /* Primary Colors */
+    --primary-blue: #6366f1;
+    --secondary-violet: #8b5cf6;
+    --accent-yellow: #fbbf24;
+    --bg-light: #faf5ff;
+    --bg-medium: #f0f4ff;
+    --text-dark: #1e1b4b;
+    --text-medium: #4c1d95;
+
+    /* Gradients */
+    --header-gradient: linear-gradient(135deg, #ddd6fe, #bfdbfe, #fbbf24);
+    --card-gradient: linear-gradient(135deg, #faf5ff, #f0f4ff);
+    --button-gradient: linear-gradient(45deg, #8b5cf6, #3b82f6);
+    --footer-gradient: linear-gradient(135deg, #4c1d95, #1e3a8a);
+
+    /* Borders */
+    --card-border: 2px solid #ddd6fe;
+    --accent-border: 2px solid #fbbf24;
+    --subtle-border: 1px solid #e0e7ff;
+
+    /* Border Radius */
+    --header-radius: 40px;
+    --card-radius: 28px;
+    --footer-radius: 32px;
+    --button-radius: 30px;
+    --small-radius: 20px;
+
+    /* Shadows */
+    --card-shadow: 0 4px 15px rgba(139, 92, 246, 0.15);
+    --card-hover-shadow: 0 8px 25px rgba(139, 92, 246, 0.25);
+    --header-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    --button-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+
+    /* Animation Timing */
+    --fast-transition: 0.2s;
+    --medium-transition: 0.3s;
+    --slow-transition: 0.5s;
+    --page-transition: 0.8s;
+    --float-duration: 3s;
+}
+
 /* Reset some basic styles */
 * {
     margin: 0;
@@ -8,8 +51,12 @@
 
 body {
     line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+    background: var(--bg-light);
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(219, 214, 254, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(191, 219, 254, 0.1) 0%, transparent 50%);
+    color: var(--text-dark);
+    overflow-x: hidden;
 }
 
 /* Container */
